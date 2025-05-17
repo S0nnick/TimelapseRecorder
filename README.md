@@ -42,14 +42,14 @@ Since USB 2.0 is not capable to transfer uncompressed images of high resolution,
 It is possible to link gpio inputs to keyboard strokes. This can be realized using the [device tree](https://en.wikipedia.org/wiki/Devicetree).
 I learned about this through the [Blogpost by Martin Strohmayer](https://blog.gc2.at/post/gpio-tasten/).
 
-To realize this, add these lines into the ``/etc/rc.local`` file, just before the line ``exit 0``.
+To realize this, open the ``sudo nano /boot/firmware/config.txt`` add these lines under [all]
 
 ```
 sudo dtoverlay gpio-key gpio=2 keycode=30 label="a" gpio_pull=2 
 sudo dtoverlay gpio-key gpio=3 keycode=31 label="s" gpio_pull=2
 sudo dtoverlay gpio-key gpio=4 keycode=32 label="d" gpio_pull=2
 sudo dtoverlay gpio-key gpio=17 keycode=17 label="w" gpio_pull=2 
-sudo dtoverlay gpio-key gpio=27 keycode=18 label="e" gpio_pull=2
+sudo dtoverlay gpio-key gpio=18 keycode=18 label="e" gpio_pull=2
 sudo dtoverlay gpio-key gpio=22 keycode=1 label="Esc" gpio_pull=2
 sudo dtoverlay gpio-key gpio=10 keycode=408 label="reboot" gpio_pull=2
 ```
